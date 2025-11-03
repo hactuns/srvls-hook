@@ -1,5 +1,6 @@
 import { config, createLogger, format, transports } from 'winston';
 import CloudwatchTransport from 'cloudwatch-transport';
+import TelegramLogger from 'winston-telegram';
 
 const currentDate = new Date();
 
@@ -31,6 +32,13 @@ const Logger = createLogger({
       },
       enabled: String(process.env.NODE_ENV) !== 'dev',
     }),
+    ...(process.env.TELEGRAM_TOKEN && [
+      new TelegramLogger({
+        token: String(process.env.TELEGRAM_TOKEN),
+        chatId: String(process.env.TELEGRAM_CHAT_ID),
+        enabled: String(process.env.NODE_ENV) !== 'dev',
+      }),
+    ]),
   ],
 });
 
