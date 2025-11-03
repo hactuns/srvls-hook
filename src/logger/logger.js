@@ -37,6 +37,7 @@ const Logger = createLogger({
         token: String(process.env.TELEGRAM_TOKEN),
         chatId: String(process.env.TELEGRAM_CHAT_ID),
         enabled: String(process.env.NODE_ENV) !== 'dev',
+        batchingDelay: 5_000,
         formatMessage: (params, info) => {
           const { message, level, ...metadata } = Object.assign(params, info);
 

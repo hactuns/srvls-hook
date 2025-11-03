@@ -1,6 +1,6 @@
 {
   "name": "srvls-hook",
-  "version": "1.5.9",
+  "version": "1.5.10",
   "description": "Custom hooks for vercel/next serverless API",
   "keywords": [
     "vercel",
