@@ -37,6 +37,8 @@ const Logger = createLogger({
         token: String(process.env.TELEGRAM_TOKEN),
         chatId: String(process.env.TELEGRAM_CHAT_ID),
         enabled: String(process.env.NODE_ENV) !== 'dev',
+        formatMessage: (params, info) =>
+          `[${params.level.toUpperCase()}]: ${info.message} - ${JSON.stringify(info.metadata ?? {})} - ${JSON.stringify(info)}`,
       }),
     ]),
   ],
