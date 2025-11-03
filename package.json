@@ -1,6 +1,6 @@
 {
   "name": "srvls-hook",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Custom hooks for vercel/next serverless API",
   "keywords": [
     "vercel",
@@ -51,6 +51,7 @@
     "@vercel/functions": "^1.4.2",
     "cloudwatch-transport": "^1.0.3",
     "mongodb": "^6.9.0",
-    "winston": "^3.15.0"
+    "winston": "^3.15.0",
+    "winston-telegram": "^2.7.0"
   }
 }
